@@ -4,6 +4,16 @@ german_list = ["das Bett","der Schmetterling","der Tisch", "das Wasser", "das Pf
 eng_to_ger = dict(zip(english_list, german_list))
 ger_to_eng = dict(zip(german_list, english_list))
 
+print(english_list)
+
+def add():
+    new_eng = input("Anglické slovo: ")
+    new_ger = input("Německé slovo: ")
+    english_list.append(new_eng)
+    german_list.append(new_ger)
+
+add()
+
 
 def translate(eng_word, ger_word):
     word_list = input("Přejete si zobrazit anglický nebo německý seznam slov? ENG/GER ")
@@ -23,7 +33,6 @@ def translate(eng_word, ger_word):
         print("Toto slovo není na seznamu.")
         translate(eng_word,ger_word)
 
-def add():
 
 
 def delete():
@@ -41,20 +50,24 @@ def least_popular():
     # counter
 
 def menu():
-    user_choice = input("Vyberte možnost: 1 - přidat slovo, 2 - smazat slovo, 3 - nahradit slovo, "
-                        "4 - nejpopulárnější, 5 - nejméně populární")
+    user_choice = input("Vyberte možnost: 1 - přeložit 2 - přidat slovo, 3 - smazat slovo, 4 - nahradit slovo, "
+                        "5 - nejpopulárnější, 6 - nejméně populární, 7 - ukončit program")
     if user_choice == 1:
-        add()
+        translate()
     elif user_choice == 2:
-        delete()
+        add()
     elif user_choice == 3:
-        replace()
+        delete()
     elif user_choice == 4:
-        most_popular()
+        replace()
     elif user_choice == 5:
+        most_popular()
+    elif user_choice == 6:
         least_popular()
+    elif user_choice == 7:
+        break
     else:
-        print("Zadejte volbu od 1 do 5")
-
-translate(eng_word, ger_word)
+        print("Zadejte volbu od 1 do 7")
+        menu()
+menu()
 
