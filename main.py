@@ -24,12 +24,12 @@ def translate(eng_word, ger_word):
         translate(eng_word,ger_word)
 
 def add():
-    pass
+
 
 def delete():
     pass
 
-def replace(word):
+def replace():
     pass
 
 def most_popular():
@@ -39,6 +39,22 @@ def most_popular():
 def least_popular():
     pass
     # counter
+
+def menu():
+    user_choice = input("Vyberte možnost: 1 - přidat slovo, 2 - smazat slovo, 3 - nahradit slovo, "
+                        "4 - nejpopulárnější, 5 - nejméně populární")
+    if user_choice == 1:
+        add()
+    elif user_choice == 2:
+        delete()
+    elif user_choice == 3:
+        replace()
+    elif user_choice == 4:
+        most_popular()
+    elif user_choice == 5:
+        least_popular()
+    else:
+        print("Zadejte volbu od 1 do 5")
 
 translate(eng_word, ger_word)
 
