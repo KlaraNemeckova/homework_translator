@@ -15,13 +15,13 @@ def translate(eng_word, ger_word):
 
     elif word_list == "GER":
         print(german_list)
-        key = input("Vyberte slovo ")
-        result = ger_to_eng.get(key)
-        print("{} is {} in english.".format(eng_word, result))
+        ger_word = input("Vyberte slovo ")
+        result = ger_to_eng.get(ger_word)
+        print("{} is {} in english.".format(ger_word, result))
 
     else:
         print("Toto slovo není na seznamu.")
-        translate()
+        translate(eng_word,ger_word)
 
 def add():
     pass
@@ -31,6 +31,14 @@ def delete():
 
 def replace(word):
     pass
+
+def most_popular():
+    pass
+    # counter
+
+def least_popular():
+    pass
+    # counter
 
 translate(eng_word, ger_word)
 
